@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  win-dotnet:
+    build:
+      context: ./win-dotnet
+    image: drewcooper/win-dotnet:v.0.0.1
