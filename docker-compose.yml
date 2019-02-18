@@ -1,6 +1,9 @@
 version: '3.7'
 services:
-  win-dotnet:
+  linux-jenkins-master:
     build:
-      context: ./win-dotnet
-    image: drewcooper/win-dotnet:v.0.0.1
+      context: ./linux/jenkins-master
+    image: drewcooper/linux-jenkins-master:0.0.2
+    ports:
+      - "8080:8080"
+    restart: always

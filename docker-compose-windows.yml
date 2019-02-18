@@ -1,0 +1,6 @@
+version: '3.7'
+services:
+  windows-builder:
+    build:
+      context: ./windows/builder
+    image: drewcooper/windows-builder:0.0.1

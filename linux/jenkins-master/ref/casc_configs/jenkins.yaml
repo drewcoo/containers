@@ -1,0 +1,41 @@
+#plugins:
+#  sites:
+#  - id: "default"
+#    url: "https://updates.jenkins.io/update-center.json"
+configuration-as-code:
+  deprecated: warn
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  disableRememberMe: false
+  labelString: "master"
+  mode: EXCLUSIVE
+  numExecutors: 4
+  primaryView:
+    all:
+      name: "the_build"
+  quietPeriod: 5
+  scmCheckoutRetryCount: 0
+  slaveAgentPort: 50000
+  systemMessage: "Welcome to Jenkins - configured with code!"
+  views:
+  - all:
+      name: "all"
+unclassified:
+  gitHubPluginConfig:
+    configs:
+    - manageHooks: false
+  location:
+    url: "http://localhost:8080/"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  jdk:
+    defaultProperties:
+    - installSource:
+        installers:
+        - jdkInstaller:
+            acceptLicense: false

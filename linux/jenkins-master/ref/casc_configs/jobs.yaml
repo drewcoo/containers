@@ -1,0 +1,47 @@
+jobs:
+  # To put in a folder, create the folder:
+  #- script: >
+  #     folder('main')
+  # And name the following 'main/build' instead:
+  - script: >
+      multibranchPipelineJob('build') {
+         branchSources {
+           github {
+             scanCredentialsId('drewcoo')
+             repoOwner('drewcoo')
+             repository('containers')
+           }
+         }
+         orphanedItemStrategy {
+           discardOldItems {
+             numToKeep(1)
+           }
+         }
+         triggers {
+           periodic(1)
+         }
+       }
+  - script: >
+      listView('the_build')  {
+        description('a tab for the build')
+        filterBuildQueue()
+        filterExecutors()
+        jobs {
+          name('build')
+          regex(/build.*/)
+        }
+        jobFilters {
+          status {
+            status(Status.UNSTABLE)
+          }
+        }
+        columns {
+          status()
+          weather()
+          name()
+          lastSuccess()
+          lastFailure()
+          lastDuration()
+          buildButton()
+        }
+      }
