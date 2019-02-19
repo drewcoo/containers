@@ -26,7 +26,7 @@ pipeline {
     }
     stage('test1') {
       agent {
-        label 'master'
+        //label 'master'
         docker {
           image 'alpine:3.6'
         //  image 'buildpack-deps:scm'
