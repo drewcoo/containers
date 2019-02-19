@@ -23,10 +23,16 @@ pipeline {
         echo 'Build succeeded.'
       }
     }
-    stage('test') {
+    stage('test1') {
       agent {
-        docker { image: 'alpine:3.7' }
+        docker { image 'alpine:3.7' }
       }
+      steps {
+        sh 'echo on alpine!'
+      }
+    }
+    stage('test2') {
+      agent { label 'master' }
       steps {
         unstash 'build-stash'
         sh '''
