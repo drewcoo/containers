@@ -27,8 +27,7 @@ pipeline {
     stage('test1') {
       agent {
         docker {
-          alwaysPull true
-          image 'alpine:3.7'
+          image 'buildpack-deps:scm'
         }
       }
       steps {
