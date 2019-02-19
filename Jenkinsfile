@@ -24,7 +24,9 @@ pipeline {
       }
     }
     stage('test') {
-      agent { label 'master' }
+      agent {
+        docker { image: 'node:7-alpine' }
+      }
       steps {
         unstash 'build-stash'
         sh '''
