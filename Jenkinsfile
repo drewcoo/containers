@@ -26,7 +26,10 @@ pipeline {
     }
     stage('test1') {
       agent {
-        docker { image 'alpine:3.7' }
+        docker {
+          alwaysPull true
+          image 'alpine:3.7'
+        }
       }
       steps {
         sh 'echo on alpine!'
