@@ -26,9 +26,10 @@ pipeline {
     }
     stage('test1') {
       agent {
-        docker {
-          image 'buildpack-deps:scm'
-        }
+        label 'master'
+        //docker {
+        //  image 'buildpack-deps:scm'
+        //}
       }
       steps {
         sh 'echo on alpine!'
