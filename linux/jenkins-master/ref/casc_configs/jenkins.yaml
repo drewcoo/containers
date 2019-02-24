@@ -13,15 +13,42 @@ jenkins:
   mode: EXCLUSIVE
   numExecutors: 4
   primaryView:
-    all:
+    list:
+      includeRegex: "build.*"
+      jobFilters:
+      - jobStatusFilter:
+          aborted: false
+          disabled: false
+          failed: false
+          includeExcludeTypeString: "includeMatched"
+          stable: false
+          unstable: true
       name: "the_build"
   quietPeriod: 5
   scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: true
+      enableCaptcha: false
+      users:
+      #- id: "jenkins"
+      - id: "robot"
   slaveAgentPort: 50000
   systemMessage: "Welcome to Jenkins - configured with code!"
   views:
   - all:
       name: "all"
+  - list:
+      includeRegex: "build.*"
+      jobFilters:
+      - jobStatusFilter:
+          aborted: false
+          disabled: false
+          failed: false
+          includeExcludeTypeString: "includeMatched"
+          stable: false
+          unstable: true
+      name: "the_build"
 unclassified:
   gitHubPluginConfig:
     configs:
