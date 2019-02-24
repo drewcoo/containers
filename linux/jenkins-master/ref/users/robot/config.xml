@@ -1,0 +1,26 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<user>
+  <version>10</version>
+  <id>robot</id>
+  <properties>
+    <jenkins.security.ApiTokenProperty>
+      <tokenStore>
+        <tokenList>
+          <jenkins.security.apitoken.ApiTokenStore_-HashedToken>
+            <!-- API token secret: 1176028d636e8a9a89928d5e0d1654b667 -->
+            <uuid>710c0607-f222-4033-abb5-42a9d32f5ff3</uuid>
+            <name>token_up</name>
+            <creationDate>2019-02-24 01:59:17.717 UTC</creationDate>
+            <value>
+              <version>11</version>
+              <hash>ebc56129cdcd496d3523783d4d165ca7350c5b09455f6ff063376d84aed487f8</hash>
+            </value>
+          </jenkins.security.apitoken.ApiTokenStore_-HashedToken>
+        </tokenList>
+      </tokenStore>
+    </jenkins.security.ApiTokenProperty>
+    <hudson.security.HudsonPrivateSecurityRealm_-Details>
+      <passwordHash>#jbcrypt:$2a$10$Z.0e4rfz8LGON3O2zpEJPeLlkzHO16Z2PW12OtF60wZpe3JpJX8w6</passwordHash>
+    </hudson.security.HudsonPrivateSecurityRealm_-Details>
+  </properties>
+</user>

@@ -8,6 +8,9 @@ jenkins:
   agentProtocols:
   - "JNLP4-connect"
   - "Ping"
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false
   disableRememberMe: false
   labelString: "master"
   mode: EXCLUSIVE
@@ -31,8 +34,8 @@ jenkins:
       allowsSignup: true
       enableCaptcha: false
       users:
-      #- id: "jenkins"
-      - id: "robot"
+      - id: "jenkins"
+        password: "jenkins"
   slaveAgentPort: 50000
   systemMessage: "Welcome to Jenkins - configured with code!"
   views:
